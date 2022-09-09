@@ -1,0 +1,1307 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<title>Dream Colágeno &#8211; Quando somos jovens, a nossa pele é lisa e elástica, pois contém muito ácido hialurônico, uma substância do nosso organismo que preenche os espaços entre as &#8230;</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Dream Colágeno &raquo; Feed" href="https://dreamcolageno.com.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dream Colágeno &raquo; Feed de comentários" href="https://dreamcolageno.com.br/comments/feed/" />
+<script type="rocketlazyloadscript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/dreamcolageno.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='pa-frontend-css' href='https://dreamcolageno.com.br/wp-content/uploads/premium-addons-elementor/pa-frontend-55af8dd23.min.css?ver=1662097708' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://dreamcolageno.com.br/wp-includes/css/dist/block-library/style.min.css?ver=6.0.2' media='all' />
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #28303D;--wp--preset--color--gray: #39414D;--wp--preset--color--green: #D1E4DD;--wp--preset--color--blue: #D1DFE4;--wp--preset--color--purple: #D1D1E4;--wp--preset--color--red: #E4D1D1;--wp--preset--color--orange: #E4DAD1;--wp--preset--color--yellow: #EEEADD;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--purple-to-yellow: linear-gradient(160deg, #D1D1E4 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-purple: linear-gradient(160deg, #EEEADD 0%, #D1D1E4 100%);--wp--preset--gradient--green-to-yellow: linear-gradient(160deg, #D1E4DD 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-green: linear-gradient(160deg, #EEEADD 0%, #D1E4DD 100%);--wp--preset--gradient--red-to-yellow: linear-gradient(160deg, #E4D1D1 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-red: linear-gradient(160deg, #EEEADD 0%, #E4D1D1 100%);--wp--preset--gradient--purple-to-red: linear-gradient(160deg, #D1D1E4 0%, #E4D1D1 100%);--wp--preset--gradient--red-to-purple: linear-gradient(160deg, #E4D1D1 0%, #D1D1E4 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--extra-small: 16px;--wp--preset--font-size--normal: 20px;--wp--preset--font-size--extra-large: 40px;--wp--preset--font-size--huge: 96px;--wp--preset--font-size--gigantic: 144px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='eae-css-css' href='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/css/eae.min.css?ver=1.11.15' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=1.0' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css' href='https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1656731394' media='all' />
+<link rel='stylesheet' id='vegas-css-css' href='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/lib/vegas/vegas.min.css?ver=2.4.0' media='all' />
+<link rel='stylesheet' id='cb70d11b8-css' href='https://dreamcolageno.com.br/wp-content/uploads/essential-addons-elementor/cb70d11b8.min.css?ver=1662097708' media='all' />
+<link data-minify="1" rel='stylesheet' id='twenty-twenty-one-style-css' href='https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/themes/twentytwentyone/style.css?ver=1656731394' media='all' />
+<link rel='stylesheet' id='twenty-twenty-one-print-style-css' href='https://dreamcolageno.com.br/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.2' media='print' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1656731394' media='all' />
+<style id='elementor-icons-inline-css'>
+
+		.elementor-add-new-section .elementor-add-templately-promo-button{
+            background-color: #5d4fff;
+            background-image: url(https://dreamcolageno.com.br/wp-content/plugins/essential-addons-for-elementor-lite/assets/admin/images/templately/logo-icon.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin-left: 5px;
+            position: relative;
+            bottom: 5px;
+        }
+</style>
+<link rel='stylesheet' id='elementor-frontend-css' href='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.6' media='all' />
+<link rel='stylesheet' id='elementor-post-8-css' href='https://dreamcolageno.com.br/wp-content/uploads/elementor/css/post-8.css?ver=1656730706' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://dreamcolageno.com.br/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.0.8' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='https://dreamcolageno.com.br/wp-content/uploads/elementor/css/global.css?ver=1656730705' media='all' />
+<link rel='stylesheet' id='elementor-post-4557-css' href='https://dreamcolageno.com.br/wp-content/uploads/elementor/css/post-4557.css?ver=1660156942' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPlayball%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLobster%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CSaira%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CBarlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CExo%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CCapriola%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CDosis%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.0.2' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1656731395' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=1656731548' media='all' />
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://dreamcolageno.com.br/wp-json/" /><link rel="alternate" type="application/json" href="https://dreamcolageno.com.br/wp-json/wp/v2/pages/4557" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dreamcolageno.com.br/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://dreamcolageno.com.br/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.0.2" />
+<link rel="canonical" href="https://dreamcolageno.com.br/" />
+<link rel='shortlink' href='https://dreamcolageno.com.br/' />
+<link rel="alternate" type="application/json+oembed" href="https://dreamcolageno.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdreamcolageno.com.br%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://dreamcolageno.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdreamcolageno.com.br%2F&#038;format=xml" />
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://dreamcolageno.com.br/wp-content/uploads/2022/01/cropped-icone-escurin-NS-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://dreamcolageno.com.br/wp-content/uploads/2022/01/cropped-icone-escurin-NS-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://dreamcolageno.com.br/wp-content/uploads/2022/01/cropped-icone-escurin-NS-180x180.png" />
+<meta name="msapplication-TileImage" content="https://dreamcolageno.com.br/wp-content/uploads/2022/01/cropped-icone-escurin-NS-270x270.png" />
+<style id="wp-custom-css">
+			body, html {
+overflow-x: hidden !important;
+}
+
+/Corrigir escrollamento no Mobile/
+@media (max-width: 786px){
+body, html {
+overflow-x: hidden!important;
+}
+}		</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
+<body class="home page-template page-template-elementor_canvas page page-id-4557 wp-custom-logo wp-embed-responsive is-light-theme no-js singular elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-4557">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg> <div data-elementor-type="wp-page" data-elementor-id="4557" class="elementor elementor-4557">
+<header class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-61473c7c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="61473c7c" data-element_type="section" id="header" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;shape_divider_bottom&quot;:&quot;waves-pattern&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:40,&quot;end&quot;:61}},&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1047.1 3.7" preserveAspectRatio="xMidYMin slice">
+<path class="elementor-shape-fill" d="M1047.1,0C557,0,8.9,0,0,0v1.6c0,0,0.6-1.5,2.7-0.3C3.9,2,6.1,4.1,8.3,3.5c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3C13.8,2,16,4.1,18.2,3.5c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3C23.6,2,25.9,4.1,28,3.5c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3C63,2,65.3,4.1,67.4,3.5	C68.3,3.3,69,1.6,69,1.6s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	C82.7,2,85,4.1,87.1,3.5c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3C92.6,2,94.8,4.1,97,3.5c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.6-0.4V0z M2.5,1.2C2.5,1.2,2.5,1.2,2.5,1.2C2.5,1.2,2.5,1.2,2.5,1.2z M2.7,1.4c0.1,0,0.1,0.1,0.1,0.1C2.8,1.4,2.8,1.4,2.7,1.4z" />
+</svg> </div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4a7ad165" data-id="4a7ad165" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-3fda7905 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3fda7905" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-6cb42a7a" data-id="6cb42a7a" data-element_type="column">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-55d0bd63" data-id="55d0bd63" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2d795645 m0 elementor-widget elementor-widget-heading" data-id="2d795645" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.6 - 08-06-2022 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2 class="elementor-heading-title elementor-size-default">Dream
+</h2> </div>
+</div>
+<div class="elementor-element elementor-element-4b1fa064 elementor-widget elementor-widget-heading" data-id="4b1fa064" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Colágeno
+</h2> </div>
+</div>
+<div class="elementor-element elementor-element-5bf9fcdc m0 elementor-widget elementor-widget-heading" data-id="5bf9fcdc" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Poderosa e jovem novamente</p> </div>
+</div>
+<div class="elementor-element elementor-element-7160aa5c elementor-widget elementor-widget-heading" data-id="7160aa5c" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Melhora as rugas, pele ressecada, perda de sustentação, bigode chinês, olheiras e linhas de expressão além de melhorar o aspecto cansado e envelhecido da pele, <b>SEM USO DE AGULHAS ou PROCEDIMENTOS INVASIVOS</b></p> </div>
+</div>
+<div class="elementor-element elementor-element-66e21187 elementor-widget elementor-widget-eael-creative-button" data-id="66e21187" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--winona" href="#tabelas" data-text="COM DESCONTO">
+<div class="creative-button-inner">
+<span class="cretive-button-text">COMPRE AGORA!</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-395e1c49" data-id="395e1c49" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2f995189 elementor-absolute none elementor-widget elementor-widget-image" data-id="2f995189" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.6 - 08-06-2022 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style> <img width="284" height="414" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_header.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_header.png 284w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_header-206x300.png 206w" sizes="(max-width: 284px) 100vw, 284px" style="width:100%;height:145.77%;max-width:284px" /> </div>
+</div>
+<div class="elementor-element elementor-element-28e14752 m0 elementor-hidden-desktop elementor-widget elementor-widget-image" data-id="28e14752" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_header.png" title="dream_colageno_header.png" alt="dream_colageno_header.png" /> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</header>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-6334be68 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6334be68" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-41b70dc2" data-id="41b70dc2" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-20fe5ea9 cx_img elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="20fe5ea9" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3cc401ca" data-id="3cc401ca" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-10f2e0a3 elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="10f2e0a3" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.6 - 08-06-2022 */
+.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:768px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}</style><div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="256" height="256" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/01.png" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:256px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Aumenta elasticidade</h3><p class="elementor-image-box-description">O primeiro estudo científico feito com este ingrediente foi realizado com 69 mulheres entre 35 e 55 anos de idade. Ele revelou que a suplementação com o Dream Colágeno contribui para um aumento significativo da elasticidade da pele até 10%</p></div></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-72b33b13" data-id="72b33b13" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-5544ceb5 elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="5544ceb5" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="256" height="256" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/02.png" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:256px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Melhora a aparência</h3><p class="elementor-image-box-description">A ingestão oral do Dream Colágeno estimula o metabolismo do colágeno na pele, agindo de dentro para fora, aumentando a hidratação e retardando o aparecimento de rugas. Inúmeros experimentos científicos comprovam a eficácia do Dream Colágeno.</p></div></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1a081b58" data-id="1a081b58" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-24796702 elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="24796702" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="256" height="256" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/03.png" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:256px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Reduz a celulite</h3><p class="elementor-image-box-description">O Dream Colágeno apresenta efeitos benéficos sobre a matriz extracelular da pele e restaura a estrutura normal da derme e do tecido subcutâneo. A suplementação também reduziu a ondulação na pele, com os primeiros resultados visíveis após 3 meses, sendo mais acentuados após 6 meses.</p></div></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-531bd569" data-id="531bd569" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-51e35054 elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="51e35054" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="256" height="256" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/04.png" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:256px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Unhas mais saudáveis</h3><p class="elementor-image-box-description">Para muitas mulheres, unhas bonitas e bem tratadas são essenciais. Mas muitas mulheres sofrem com unhas fracas e quebradiças, que por vezes também apresentam descamações e aspereza. A suplementação com o Dream Colágeno pode ajudar a reverter essa situação.</p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-2db524d2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2db524d2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;opacity-fan&quot;}">
+<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 19.6" preserveAspectRatio="none">
+<path class="elementor-shape-fill" style="opacity:0.33" d="M0 0L0 18.8 141.8 4.1 283.5 18.8 283.5 0z" />
+<path class="elementor-shape-fill" style="opacity:0.33" d="M0 0L0 12.6 141.8 4 283.5 12.6 283.5 0z" />
+<path class="elementor-shape-fill" style="opacity:0.33" d="M0 0L0 6.4 141.8 4 283.5 6.4 283.5 0z" />
+<path class="elementor-shape-fill" d="M0 0L0 1.2 141.8 4 283.5 1.2 283.5 0z" />
+</svg> </div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3c3f66c6" data-id="3c3f66c6" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-4464ab27 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-premium-icon-list" data-id="4464ab27" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-415c984 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/n.png" alt="n.png"> </div>
+<span data-text="EW SKIN"> EW SKIN </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-79aca9d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="79aca9d" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-535eefc" data-id="535eefc" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2044e14 m0 elementor-widget elementor-widget-heading" data-id="2044e14" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Conheça o poder</h2> </div>
+</div>
+<div class="elementor-element elementor-element-74133fe1 m0 elementor-widget elementor-widget-heading" data-id="74133fe1" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Do Dream Colágeno®</h2> </div>
+</div>
+<div class="elementor-element elementor-element-2e8db39a elementor-widget elementor-widget-heading" data-id="2e8db39a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">O colágeno compõe 80% da estrutura da pele, e, durante o processo de envelhecimento, diferentes fatores aceleram a diminuição da produção natural, que diminui após os 25 anos: </p> </div>
+</div>
+<div class="elementor-element elementor-element-48ef715e elementor-widget elementor-widget-heading" data-id="48ef715e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"><b>O Dream Colágeno® atua de dentro para fora, reconstruindo a estrutura da pele, estimulando a produção e promovendo a elasticidade, firmeza, redução das linhas de expressão e suavização das celulites, além disso, pode se notar unhas e cabelos mais fortes</b> e nutridos como benefício.</p> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6ced237a none" data-id="6ced237a" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-1e6d7101 elementor-absolute none elementor-widget elementor-widget-image" data-id="1e6d7101" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="640" height="640" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo.png 640w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo-150x150.png 150w" sizes="(max-width: 640px) 100vw, 640px" style="width:100%;height:100%;max-width:640px" /> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-332d2bb4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="332d2bb4" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-6936f8b5" data-id="6936f8b5" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-12d5ec60 m0 elementor-hidden-desktop elementor-widget elementor-widget-image" data-id="12d5ec60" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="640" height="640" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo.png 640w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/pele_demo-150x150.png 150w" sizes="(max-width: 640px) 100vw, 640px" style="width:100%;height:100%;max-width:640px" /> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1de337ae" data-id="1de337ae" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3ce0b7df elementor-widget elementor-widget-eael-creative-button" data-id="3ce0b7df" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--winona" href="#tabelas" data-text="COM DESCONTO">
+<div class="creative-button-inner">
+<span class="cretive-button-text">COMPRE AGORA!</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-16869973" data-id="16869973" data-element_type="column">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-4a2a229d elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4a2a229d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-588986f" data-id="588986f" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-21db2e67 elementor-section-content-middle elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="21db2e67" data-element_type="section">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-2aa8a71f" data-id="2aa8a71f" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3a5df2e0 elementor-widget elementor-widget-heading" data-id="3a5df2e0" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">Sem agulhas, indolor, não é um procedimento invasivo, ou seja, sem causar qualquer manchas ou outros efeitos na pele.</p> </div>
+</div>
+<div class="elementor-element elementor-element-112f06c1 lista elementor-widget elementor-widget-premium-icon-list" data-id="112f06c1" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-a57595e premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/check.png" alt="check.png"> </div>
+<span data-text="&lt;span&gt; Hidratação &lt;b&gt;profunda&lt;/b&gt;&lt;/span&gt;"> <span> Hidratação <b>profunda</b></span> </span>
+</div>
+</li>
+<li class="premium-bullet-list-content elementor-repeater-item-f1873fa premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/check.png" alt="check.png"> </div>
+<span data-text="&lt;span&gt; &lt;b&gt;Combate&lt;/b&gt; as linhas de expressões&lt;/span&gt;"> <span> <b>Combate</b> as linhas de expressões</span> </span>
+</div>
+</li>
+<li class="premium-bullet-list-content elementor-repeater-item-dbb46f6 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/check.png" alt="check.png"> </div>
+<span data-text="&lt;span&gt;&lt;b&gt;Diminui&lt;/b&gt; rugas e bigode chinês&lt;/span&gt;"> <span><b>Diminui</b> rugas e bigode chinês</span> </span>
+</div>
+</li>
+<li class="premium-bullet-list-content elementor-repeater-item-b3d3aa4 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/check.png" alt="check.png"> </div>
+<span data-text="&lt;span&gt; &lt;b&gt;Firmeza e brilho&lt;/b&gt; para a pele&lt;/span&gt;"> <span> <b>Firmeza e brilho</b> para a pele</span> </span>
+ </div>
+</li>
+<li class="premium-bullet-list-content elementor-repeater-item-683454c premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/check.png" alt="check.png"> </div>
+<span data-text="&lt;span&gt; &lt;b&gt;Retarda&lt;/b&gt; o envelhecimento&lt;/span&gt;"> <span> <b>Retarda</b> o envelhecimento</span> </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-12375c28 elementor-hidden-desktop elementor-widget elementor-widget-image" data-id="12375c28" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="428" height="394" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_deitado.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_deitado.png 428w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_deitado-300x276.png 300w" sizes="(max-width: 428px) 100vw, 428px" style="width:100%;height:92.06%;max-width:428px" /> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-64b76d52" data-id="64b76d52" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-48f9732b elementor-widget elementor-widget-image" data-id="48f9732b" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/modelo.png" title="modelo.png" alt="modelo.png" /> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7d6f2736" data-id="7d6f2736" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-22c461f7 m0 elementor-widget elementor-widget-heading" data-id="22c461f7" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Verdadeiro</h2> </div>
+</div>
+<div class="elementor-element elementor-element-26820e8e m0 elementor-widget elementor-widget-heading" data-id="26820e8e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">ANTI-IDADE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-a8c303b m0 elementor-widget elementor-widget-heading" data-id="a8c303b" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">em cápsulas</h2> </div>
+</div>
+<div class="elementor-element elementor-element-16c30241 elementor-absolute none elementor-widget elementor-widget-image" data-id="16c30241" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="428" height="394" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_deitado.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_deitado.png 428w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/dream_colageno_deitado-300x276.png 300w" sizes="(max-width: 428px) 100vw, 428px" style="width:100%;height:92.06%;max-width:428px" /> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-70fbf4a8 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="70fbf4a8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1df4b8f8" data-id="1df4b8f8" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-2d642788 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="2d642788" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7f50b142" data-id="7f50b142" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-aa07ac9 elementor-arrows-position-inside elementor-pagination-position-outside elementor-widget elementor-widget-image-carousel" data-id="aa07ac9" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;2&quot;,&quot;navigation&quot;:&quot;both&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;speed&quot;:500,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]}}" data-widget_type="image-carousel.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.6 - 08-06-2022 */
+.elementor-widget-image-carousel .swiper-container{position:static}.elementor-widget-image-carousel .swiper-container .swiper-slide figure{line-height:inherit}.elementor-widget-image-carousel .swiper-slide{text-align:center}.elementor-image-carousel-wrapper:not(.swiper-container-initialized) .swiper-slide{max-width:calc(100% / var(--e-image-carousel-slides-to-show, 3))}</style> <div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
+<div class="elementor-image-carousel swiper-wrapper">
+<div class="swiper-slide"><figure class="swiper-slide-inner"><img class="swiper-slide-image" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dp_01-2.png" alt="dp_01-2.png" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img class="swiper-slide-image" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dp_02-2.png" alt="dp_02-2.png" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img class="swiper-slide-image" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dp_03-2.png" alt="dp_03-2.png" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img class="swiper-slide-image" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/dp_04-1.png" alt="dp_04-1.png" /></figure></div> </div>
+<div class="swiper-pagination"></div>
+<div class="elementor-swiper-button elementor-swiper-button-prev">
+<i aria-hidden="true" class="eicon-chevron-left"></i> <span class="elementor-screen-only">Anterior</span>
+</div>
+<div class="elementor-swiper-button elementor-swiper-button-next">
+<i aria-hidden="true" class="eicon-chevron-right"></i> <span class="elementor-screen-only">Seguinte</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-63713f6a" data-id="63713f6a" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-424b130e m0 elementor-widget elementor-widget-heading" data-id="424b130e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">APROVADO</h2> </div>
+</div>
+<div class="elementor-element elementor-element-5e2cee3f m0 elementor-widget elementor-widget-heading" data-id="5e2cee3f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">POR TODAS ELAS</h2> </div>
+</div>
+<div class="elementor-element elementor-element-469b2e7 elementor-widget elementor-widget-heading" data-id="469b2e7" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default">
+Mais de 37 mil pessoas já experimentaram o "Dream Colágeno" com mais de 98% de satisfação!
+</p> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-52a7032b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="52a7032b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6b0cafe0" data-id="6b0cafe0" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-ffd084 m0 elementor-widget elementor-widget-heading" data-id="ffd084" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Escolha abaixo</h2> </div>
+</div>
+<div class="elementor-element elementor-element-1666d522 m0 elementor-widget elementor-widget-heading" data-id="1666d522" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"> a melhor opção para você</h2> </div>
+</div>
+<div class="elementor-element elementor-element-4744e205 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="4744e205" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"><b style="color:yellow">Atenção:</b> por grande demanda de pedidos, <b>restão poucas únidades de Dream Colágeno </b>, estoque com duração até <b style="background:#7E136C;padding:2px;border-radius:4px;color:#FFF">30/07/2022</b>, aproveite antes que acabem.</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-5cf5d2f3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5cf5d2f3" data-element_type="section" id="tabelas" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div data-wts-url="https://app.monetizze.com.br/checkout/DCZ152803" data-wts-link="yes" data-wts-new-window="" class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6d5666bb tabela ae-link-yes" data-id="6d5666bb" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-5419c352 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5419c352" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-560bbcfe t1" data-id="560bbcfe" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-75f9438d m0  elementor-widget elementor-widget-heading" data-id="75f9438d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">DEFINITIVO</h2> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5b2eda8c" data-id="5b2eda8c" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3f13bd19 m0 elementor-widget elementor-widget-heading" data-id="3f13bd19" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">5 MESES</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-1b3c0b6e elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1b3c0b6e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5f491b1a" data-id="5f491b1a" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-65a2b41b m0 elementor-widget elementor-widget-image" data-id="65a2b41b" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="400" height="400" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/5pt.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/5pt.png 400w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/5pt-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/5pt-150x150.png 150w" sizes="(max-width: 400px) 100vw, 400px" style="width:100%;height:100%;max-width:400px" /> </div>
+</div>
+<div class="elementor-element elementor-element-46444969 desconto m0 elementor-widget elementor-widget-heading" data-id="46444969" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<div class="elementor-heading-title elementor-size-default">50%<b>OFF</b></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-77cf0366" data-id="77cf0366" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-21e49aa3 m0 elementor-widget elementor-widget-heading" data-id="21e49aa3" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+ <h2 class="elementor-heading-title elementor-size-default">ATÉ 12X DE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-5c7023db m0 elementor-widget elementor-widget-heading" data-id="5c7023db" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 29,82</h2> </div>
+</div>
+<div class="elementor-element elementor-element-4c11fab9 m0 elementor-widget elementor-widget-heading" data-id="4c11fab9" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">OU À VÍSTA POR</h2> </div>
+</div>
+<div class="elementor-element elementor-element-51647c93 m0 elementor-widget elementor-widget-heading" data-id="51647c93" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 298,00</h2> </div>
+</div>
+<div class="elementor-element elementor-element-5232976f m0 elementor-widget elementor-widget-heading" data-id="5232976f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Contém 5 frascos <br>com 60 caps cada</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-2999f7d6 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2999f7d6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f0b09d3" data-id="f0b09d3" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-7fffdbdc p0 frete elementor-widget elementor-widget-premium-icon-list" data-id="7fffdbdc" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-ecc37a7 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/box.png" alt="box.png"> </div>
+<span data-text="FRETE GRÁTIS PARA&lt;b&gt;TODO O BRASIL&lt;/b&gt;"> FRETE GRÁTIS PARA<b>TODO O BRASIL</b> </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4d498a15" data-id="4d498a15" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-844da89 m0 bt elementor-widget elementor-widget-eael-creative-button" data-id="844da89" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--default" href="#tabelas" data-text="AGORA">
+<div class="creative-button-inner">
+<span class="cretive-button-text">COMPRAR</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div data-wts-url="https://app.monetizze.com.br/checkout/DNU152802" data-wts-link="yes" data-wts-new-window="" class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1bee70a2 tabela ae-link-yes" data-id="1bee70a2" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-1e24c2fa elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1e24c2fa" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-769bafad t1" data-id="769bafad" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-6d3f53dd m0 pisca elementor-widget elementor-widget-heading" data-id="6d3f53dd" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">MAIS VENDIDO</h2> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7e7f62c5" data-id="7e7f62c5" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-211b2bcf m0 elementor-widget elementor-widget-heading" data-id="211b2bcf" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">3 MESES</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-22d7f6ea elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="22d7f6ea" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7d9cddf7" data-id="7d9cddf7" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-307fc168 m0 elementor-widget elementor-widget-image" data-id="307fc168" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="400" height="400" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt.png 400w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt-150x150.png 150w" sizes="(max-width: 400px) 100vw, 400px" style="width:100%;height:100%;max-width:400px" /> </div>
+</div>
+<div class="elementor-element elementor-element-5855b39e desconto m0 elementor-widget elementor-widget-heading" data-id="5855b39e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<div class="elementor-heading-title elementor-size-default">40%<b>OFF</b></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1c7c3b16" data-id="1c7c3b16" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-1d612ce5 m0 elementor-widget elementor-widget-heading" data-id="1d612ce5" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">ATÉ 12X DE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-8ecda75 m0 elementor-widget elementor-widget-heading" data-id="8ecda75" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 19,88</h2> </div>
+</div>
+<div class="elementor-element elementor-element-4eaba5dc m0 elementor-widget elementor-widget-heading" data-id="4eaba5dc" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">OU À VÍSTA POR</h2> </div>
+</div>
+<div class="elementor-element elementor-element-895eaf3 m0 elementor-widget elementor-widget-heading" data-id="895eaf3" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 198,00</h2> </div>
+</div>
+<div class="elementor-element elementor-element-49ec0c35 m0 elementor-widget elementor-widget-heading" data-id="49ec0c35" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Contém 3 frascos <br>com 60 caps cada</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-46f81ffa elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="46f81ffa" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-78cda1c" data-id="78cda1c" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-532446ae p0 frete elementor-widget elementor-widget-premium-icon-list" data-id="532446ae" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-ecc37a7 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/box.png" alt="box.png"> </div>
+<span data-text="FRETE GRÁTIS PARA&lt;b&gt;TODO O BRASIL&lt;/b&gt;"> FRETE GRÁTIS PARA<b>TODO O BRASIL</b> </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-334658c5" data-id="334658c5" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-149cf4b9 m0 bt elementor-widget elementor-widget-eael-creative-button" data-id="149cf4b9" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--default" href="#tabelas" data-text="AGORA">
+<div class="creative-button-inner">
+<span class="cretive-button-text">COMPRAR</span>
+ </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-4c9dc718 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4c9dc718" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div data-wts-url="https://app.monetizze.com.br/checkout/DEG152801" data-wts-link="yes" data-wts-new-window="" class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-18b438ff tabela ae-link-yes" data-id="18b438ff" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-5d5e02fa elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5d5e02fa" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-49e0e025 t1" data-id="49e0e025" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-7f0c4a6d m0  elementor-widget elementor-widget-heading" data-id="7f0c4a6d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">ESSENCIAL</h2> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-16b417ed" data-id="16b417ed" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-62acd3ec m0 elementor-widget elementor-widget-heading" data-id="62acd3ec" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">2 MESES</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-1e2b12d6 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1e2b12d6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7d2f52a8" data-id="7d2f52a8" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3489b75c m0 elementor-widget elementor-widget-image" data-id="3489b75c" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="400" height="400" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/2pt.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/2pt.png 400w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/2pt-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/2pt-150x150.png 150w" sizes="(max-width: 400px) 100vw, 400px" style="width:100%;height:100%;max-width:400px" /> </div>
+</div>
+<div class="elementor-element elementor-element-315c1c27 desconto m0 elementor-widget elementor-widget-heading" data-id="315c1c27" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<div class="elementor-heading-title elementor-size-default">25%<b>OFF</b></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1971ac3c" data-id="1971ac3c" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2d703d51 m0 elementor-widget elementor-widget-heading" data-id="2d703d51" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">ATÉ 12X DE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-ebf5627 m0 elementor-widget elementor-widget-heading" data-id="ebf5627" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 15,76</h2> </div>
+</div>
+<div class="elementor-element elementor-element-7bc8679c m0 elementor-widget elementor-widget-heading" data-id="7bc8679c" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">OU À VÍSTA POR</h2> </div>
+</div>
+<div class="elementor-element elementor-element-17233fd4 m0 elementor-widget elementor-widget-heading" data-id="17233fd4" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 157,00</h2> </div>
+</div>
+<div class="elementor-element elementor-element-5f1e8f33 m0 elementor-widget elementor-widget-heading" data-id="5f1e8f33" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Contém 2 frascos <br>com 60 caps cada</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-11a0b2cc elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="11a0b2cc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4e49b3eb" data-id="4e49b3eb" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-15b41b65 p0 frete elementor-widget elementor-widget-premium-icon-list" data-id="15b41b65" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-ecc37a7 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/box.png" alt="box.png"> </div>
+<span data-text="FRETE GRÁTIS PARA&lt;b&gt;TODO O BRASIL&lt;/b&gt;"> FRETE GRÁTIS PARA<b>TODO O BRASIL</b> </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-276c570d" data-id="276c570d" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-761f0ce2 m0 bt elementor-widget elementor-widget-eael-creative-button" data-id="761f0ce2" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--default" href="#tabelas" data-text="AGORA">
+<div class="creative-button-inner">
+<span class="cretive-button-text">COMPRAR</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div data-wts-url="https://app.monetizze.com.br/checkout/DBV152800" data-wts-link="yes" data-wts-new-window="" class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1f06a122 tabela ae-link-yes" data-id="1f06a122" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-7386ac08 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7386ac08" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-75bdff2d t1" data-id="75bdff2d" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2284617 m0 elementor-widget elementor-widget-heading" data-id="2284617" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">MAIS VENDIDO</h2> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2e7c0eb2" data-id="2e7c0eb2" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-7e135eb5 m0 elementor-widget elementor-widget-heading" data-id="7e135eb5" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">1 MÊS</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4db14ef1 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4db14ef1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1c971b66" data-id="1c971b66" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-33d7f346 m0 elementor-widget elementor-widget-image" data-id="33d7f346" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="400" height="400" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/1pt.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/1pt.png 400w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/1pt-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/1pt-150x150.png 150w" sizes="(max-width: 400px) 100vw, 400px" style="width:100%;height:100%;max-width:400px" /> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-354e0ca0" data-id="354e0ca0" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3890189f m0 elementor-widget elementor-widget-heading" data-id="3890189f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">ATÉ 12X DE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-145cfa72 m0 elementor-widget elementor-widget-heading" data-id="145cfa72" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 09,74</h2> </div>
+</div>
+<div class="elementor-element elementor-element-2e289344 m0 elementor-widget elementor-widget-heading" data-id="2e289344" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">OU À VÍSTA POR</h2> </div>
+</div>
+<div class="elementor-element elementor-element-3dd90592 m0 elementor-widget elementor-widget-heading" data-id="3dd90592" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">R$ 97,00</h2> </div>
+</div>
+<div class="elementor-element elementor-element-41840a79 m0 elementor-widget elementor-widget-heading" data-id="41840a79" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Contém 1 frasco <br>com 60 caps</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-ae7987b elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ae7987b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2c79aad8" data-id="2c79aad8" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3557f078 p0 frete elementor-widget elementor-widget-premium-icon-list" data-id="3557f078" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-ecc37a7 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/box.png" alt="box.png"> </div>
+<span data-text="FRETE GRÁTIS PARA&lt;b&gt;TODO O BRASIL&lt;/b&gt;"> FRETE GRÁTIS PARA<b>TODO O BRASIL</b> </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-65d04e32" data-id="65d04e32" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-59be7766 m0 bt elementor-widget elementor-widget-eael-creative-button" data-id="59be7766" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--default" href="#tabelas" data-text="AGORA">
+<div class="creative-button-inner">
+<span class="cretive-button-text">COMPRAR</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-67fd07e5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="67fd07e5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;waves-pattern&quot;}">
+<div class="elementor-shape elementor-shape-top" data-negative="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1047.1 3.7" preserveAspectRatio="xMidYMin slice">
+<path class="elementor-shape-fill" d="M1047.1,0C557,0,8.9,0,0,0v1.6c0,0,0.6-1.5,2.7-0.3C3.9,2,6.1,4.1,8.3,3.5c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3C13.8,2,16,4.1,18.2,3.5c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3C23.6,2,25.9,4.1,28,3.5c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3C63,2,65.3,4.1,67.4,3.5	C68.3,3.3,69,1.6,69,1.6s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	C82.7,2,85,4.1,87.1,3.5c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3C92.6,2,94.8,4.1,97,3.5c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9	c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9c0,0,0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2	c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.7-0.3	c1.2,0.7,3.5,2.8,5.6,2.2c0.9-0.2,1.5-1.9,1.5-1.9s0.6-1.5,2.6-0.4V0z M2.5,1.2C2.5,1.2,2.5,1.2,2.5,1.2C2.5,1.2,2.5,1.2,2.5,1.2z M2.7,1.4c0.1,0,0.1,0.1,0.1,0.1C2.8,1.4,2.8,1.4,2.7,1.4z" />
+</svg> </div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-759acecb" data-id="759acecb" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-9239601 m0 elementor-widget elementor-widget-heading" data-id="9239601" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Não acha seguro
+<br>
+<b style="color:#E41782; font-weight:900">comprar pela internet?</b></h2> </div>
+</div>
+<div class="elementor-element elementor-element-58b5d8ff elementor-widget elementor-widget-heading" data-id="58b5d8ff" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">NÃO SE PREOCUPE! VEJA COMO É SEGURO</h2> </div>
+</div>
+<div class="elementor-element elementor-element-72742476 elementor-widget elementor-widget-heading" data-id="72742476" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">O site https://dreamcolageno.com.br/ não guarda informações pessoais, nem dados de pagamento. Ao utilizar seu cartão no processo de pagamento, essas informações só podem ser visualizadas na operadora ou banco do seu cartão e não temos acesso a essas informações.</h2> </div>
+</div>
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-71417f54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="71417f54" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3d311648" data-id="3d311648" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-23bd8bcc elementor-vertical-align-middle box_s elementor-position-top elementor-widget elementor-widget-image-box" data-id="23bd8bcc" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="512" height="512" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/icone_seguranca_1.svg" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:512px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Dados Pessoais</h3><p class="elementor-image-box-description"> São totalmente sigilosos e não são compartilhados. </p></div></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-5cf23a" data-id="5cf23a" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2e8581ef elementor-vertical-align-middle box_s elementor-position-top elementor-widget elementor-widget-image-box" data-id="2e8581ef" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="512" height="512" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/icone_seguranca_2.svg" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:512px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"> Dados Financeiros </h3><p class="elementor-image-box-description"> São gravados em ambiente 100% seguro. </p></div></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-371fccfb" data-id="371fccfb" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-676794f9 elementor-vertical-align-middle box_s elementor-position-top elementor-widget elementor-widget-image-box" data-id="676794f9" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="512" height="512" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/icone_seguranca_3.svg" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:512px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"> Site Confiável</h3><p class="elementor-image-box-description"> Monitorado todo o tempo por empresas de segurança digital. </p></div></div> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-82c939c" data-id="82c939c" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-6f6599bb elementor-vertical-align-middle box_s elementor-position-top elementor-widget elementor-widget-image-box" data-id="6f6599bb" data-element_type="widget" data-widget_type="image-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="512" height="512" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/icone_seguranca_4.svg" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:100%;max-width:512px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title"> Entrega Acelerada </h3><p class="elementor-image-box-description"> Logística eficaz entregas feitas no prazo combinado. </p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-6e86eb88 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6e86eb88" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2f1a3030" data-id="2f1a3030" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-6fc152d2 m0 elementor-widget elementor-widget-image" data-id="6fc152d2" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="400" height="400" src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt.png 400w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt-300x300.png 300w, https://dreamcolageno.com.br/wp-content/uploads/2022/07/3pt-150x150.png 150w" sizes="(max-width: 400px) 100vw, 400px" style="width:100%;height:100%;max-width:400px" /> </div>
+</div>
+ <div class="elementor-element elementor-element-576dffa8 elementor-widget__width-auto elementor-absolute anima elementor-widget elementor-widget-image" data-id="576dffa8" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/7.png" title="7" alt="7" /> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3df0c61e" data-id="3df0c61e" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-229e554a m0 elementor-widget elementor-widget-heading" data-id="229e554a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Garantia de resultados</h2> </div>
+</div>
+<div class="elementor-element elementor-element-18084c5d m0 elementor-widget elementor-widget-heading" data-id="18084c5d" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default"> ou seu dinheiro de volta</h2> </div>
+</div>
+<div class="elementor-element elementor-element-36397b38 elementor-widget elementor-widget-heading" data-id="36397b38" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Nós temos certeza que Dream Colágeno vai te ajudar a atingir o seu objetivo. Mas, <b>caso você compre o produto e não fique satisfeito com o que receber, nós te damos uma garantia de 15 dias</b>. Basta entrar em contato para pedir a devolução de todo seu dinheiro. Ou seja, esta é uma compra sem riscos.
+</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-5dc6238c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5dc6238c" data-element_type="section" id="duvidas" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-57274c4f" data-id="57274c4f" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-5c4e599b m0 elementor-widget elementor-widget-heading" data-id="5c4e599b" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Dúvidas frequentes
+</h2> </div>
+</div>
+<div class="elementor-element elementor-element-79b66818 elementor-widget elementor-widget-eael-adv-accordion" data-id="79b66818" data-element_type="widget" data-widget_type="eael-adv-accordion.default">
+<div class="elementor-widget-container">
+<div class="eael-adv-accordion" id="eael-adv-accordion-79b66818" data-accordion-id="79b66818" data-accordion-type="accordion" data-toogle-speed="300">
+<div class="eael-accordion-list">
+<div id="como-devo-usar-o-dream-colgeno" class="elementor-tab-title eael-accordion-header active-default" tabindex="2041" data-tab="1" role="tab" aria-controls="elementor-tab-content-2041"><i aria-hidden="true" class="fa-toggle fas fa-plus-circle"></i><span class="eael-accordion-tab-title">Como Devo Usar o Dream Colágeno?</span></div><div id="elementor-tab-content-2041" class="eael-accordion-content clearfix active-default" data-tab="1" role="tabpanel" aria-labelledby="como-devo-usar-o-dream-colgeno"><p><div id="elementor-tab-content-5792" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="2" aria-labelledby="elementor-tab-title-5792"><div id="elementor-tab-content-9921" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-9921"><div id="elementor-tab-content-3181" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-3181"><p>DREAM COLAGENO deve ser consumido 2 cápsulas ao dia. ANTES DE DORMIR.</p></div><p><span style="font-weight: 400;"> </span></p></div></div></p></div>
+</div><div class="eael-accordion-list">
+<div id="tem-contra-indicao" class="elementor-tab-title eael-accordion-header" tabindex="2042" data-tab="2" role="tab" aria-controls="elementor-tab-content-2042"><i aria-hidden="true" class="fa-toggle fas fa-plus-circle"></i><span class="eael-accordion-tab-title">Tem contra indicação?</span></div><div id="elementor-tab-content-2042" class="eael-accordion-content clearfix" data-tab="2" role="tabpanel" aria-labelledby="tem-contra-indicao"><p><div id="elementor-tab-content-3182" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="2" aria-labelledby="elementor-tab-title-3182"><p>Não! O DREAM COLÁGENO é feito com matéria prima de qualidade e completamente natural, sendo assim ele não tem contraindicação e nenhum efeito colateral.</p></div><p><span style="font-weight: 400;"> </span></p></p></div>
+</div><div class="eael-accordion-list">
+<div id="qual-o-prazo-de-entrega" class="elementor-tab-title eael-accordion-header" tabindex="2043" data-tab="3" role="tab" aria-controls="elementor-tab-content-2043"><i aria-hidden="true" class="fa-toggle fas fa-plus-circle"></i><span class="eael-accordion-tab-title">Qual o Prazo de Entrega?</span></div><div id="elementor-tab-content-2043" class="eael-accordion-content clearfix" data-tab="3" role="tabpanel" aria-labelledby="qual-o-prazo-de-entrega"><p><div id="elementor-tab-content-3141" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-3141"><div id="elementor-tab-content-1271" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-1271"><div id="elementor-tab-content-3183" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="3" aria-labelledby="elementor-tab-title-3183"><p>O prazo médio de entrega do Produto para o Brasil é de 10 a 15 dias úteis (prazo do correio). O produto só é enviado após a confirmação do seu pagamento pela administradora do seu cartão de crédito ou após a confirmação do pagamento do boleto.</p></div></div></div></p></div>
+</div><div class="eael-accordion-list">
+<div id="-aprovado-pela-anvisa" class="elementor-tab-title eael-accordion-header" tabindex="2044" data-tab="4" role="tab" aria-controls="elementor-tab-content-2044"><i aria-hidden="true" class="fa-toggle fas fa-plus-circle"></i><span class="eael-accordion-tab-title">É Aprovado pela ANVISA?</span></div><div id="elementor-tab-content-2044" class="eael-accordion-content clearfix" data-tab="4" role="tabpanel" aria-labelledby="-aprovado-pela-anvisa"><p><div id="elementor-tab-content-9091" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-9091"><div id="elementor-tab-content-1701" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-1701"><p>Sim, ele é produzido e registrado de acordo com todos os padrões da ANVISA, e é um produto completamente seguro para uso. Aprovado e autorizado pela Vigilância Sanitária nos termos Cemus ESRDC 27/201 Categoria 430004</p></div></div></p></div>
+ </div><div class="eael-accordion-list">
+<div id="vai-funcionar-no-meu-caso" class="elementor-tab-title eael-accordion-header" tabindex="2045" data-tab="5" role="tab" aria-controls="elementor-tab-content-2045"><i aria-hidden="true" class="fa-toggle fas fa-plus-circle"></i><span class="eael-accordion-tab-title">Vai Funcionar no Meu Caso?</span></div><div id="elementor-tab-content-2045" class="eael-accordion-content clearfix" data-tab="5" role="tabpanel" aria-labelledby="vai-funcionar-no-meu-caso"><p><div id="elementor-tab-content-9091" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-9091"><div id="elementor-tab-content-1701" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-1701"><div id="elementor-tab-content-1072" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="2" aria-labelledby="elementor-tab-title-1072">Sim, DREAM COLÁGENO pode ser consumido por qualquer pessoa e traz resultados positivos. Para o melhor tratamento recomendamos o uso de, pelo menos, 3 meses.</div></div></div></p></div>
+</div><div class="eael-accordion-list">
+<div id="tem-garantia" class="elementor-tab-title eael-accordion-header" tabindex="2046" data-tab="6" role="tab" aria-controls="elementor-tab-content-2046"><i aria-hidden="true" class="fa-toggle fas fa-plus-circle"></i><span class="eael-accordion-tab-title">Tem Garantia?</span></div><div id="elementor-tab-content-2046" class="eael-accordion-content clearfix" data-tab="6" role="tabpanel" aria-labelledby="tem-garantia"><p><div id="elementor-tab-content-9091" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-9091"><div id="elementor-tab-content-1701" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="1" aria-labelledby="elementor-tab-title-1701"><div id="elementor-tab-content-1072" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="2" aria-labelledby="elementor-tab-title-1072"><div id="elementor-tab-content-1073" class="elementor-tab-content elementor-clearfix elementor-active" role="tabpanel" data-tab="3" aria-labelledby="elementor-tab-title-1073"><p>Sim! DREAM COLÁGENO tem a garantia de 15 dias. Comprando agora, caso não obtenha os resultados você tem até 15 dias para solicitar a devolução.</p></div></div></div></div></p></div>
+</div></div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-188e7c9b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="188e7c9b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-62b755b3" data-id="62b755b3" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-1559f629 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1559f629" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-7b70c299" data-id="7b70c299" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+ <div class="elementor-element elementor-element-14325a1c m0 elementor-widget elementor-widget-heading" data-id="14325a1c" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Dream
+</h2> </div>
+</div>
+<div class="elementor-element elementor-element-19509564 elementor-widget elementor-widget-heading" data-id="19509564" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Colágeno
+</h2> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-e02f9ae" data-id="e02f9ae" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-64969851 elementor-widget elementor-widget-heading" data-id="64969851" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h5 class="elementor-heading-title elementor-size-default">LINKS</h5> </div>
+</div>
+<div class="elementor-element elementor-element-51699d29 elementor-align-left m0 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="51699d29" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<link rel="stylesheet" href="https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css"> <ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="#duvidas">
+<span class="elementor-icon-list-text">Perguntas Frequentes</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-1c4fe36 elementor-align-left m0 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="1c4fe36" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYzIiwidG9nZ2xlIjpmYWxzZX0%3D">
+<span class="elementor-icon-list-text">Políticas de privacidade</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-234294fc elementor-align-left m0 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="234294fc" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY2IiwidG9nZ2xlIjpmYWxzZX0%3D">
+<span class="elementor-icon-list-text">Termos de uso</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-7e7c6da4 elementor-widget elementor-widget-eael-creative-button" data-id="7e7c6da4" data-element_type="widget" data-widget_type="eael-creative-button.default">
+<div class="elementor-widget-container">
+<div class="eael-creative-button-wrapper">
+<a class="eael-creative-button eael-creative-button--default" href="https://pedidozz.com/" data-text="">
+<div class="creative-button-inner">
+<span class="cretive-button-text">RASTREAR PEDIDO</span>
+<span class="eael-creative-button-icon-right"><i aria-hidden="true" class="fas fa-search-location"></i></span>  </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-3d0c6263" data-id="3d0c6263" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-245c605c elementor-widget elementor-widget-heading" data-id="245c605c" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h5 class="elementor-heading-title elementor-size-default">AVISO</h5> </div>
+</div>
+<div class="elementor-element elementor-element-4966dc9a elementor-widget elementor-widget-heading" data-id="4966dc9a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<p class="elementor-heading-title elementor-size-default"> Não comercializamos o Dream Colágeno no Mercado Livre. A venda só pode ser realizada através deste Site Oficial e não nos responsabilizamos por compras realizadas em outros sites. Evite falsificações e riscos a sua saúde. </p> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-24353b84" data-id="24353b84" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2476d4d7 elementor-widget elementor-widget-heading" data-id="2476d4d7" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h5 class="elementor-heading-title elementor-size-default">FORMAS DE PAGAMENTO</h5> </div>
+</div>
+<div class="elementor-element elementor-element-5673c571 elementor-widget elementor-widget-image" data-id="5673c571" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img src="https://dreamcolageno.com.br/wp-content/uploads/2022/07/pagamento-icon.png" title="pagamento-icon.png" alt="pagamento-icon.png" /> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-30d2984" data-id="30d2984" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-43fe3949 elementor-widget elementor-widget-heading" data-id="43fe3949" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h5 class="elementor-heading-title elementor-size-default">SITE SEGURO</h5> </div>
+</div>
+<div class="elementor-element elementor-element-59c2fe5a sl elementor-widget elementor-widget-premium-icon-list" data-id="59c2fe5a" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-ee41fa5 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<i aria-hidden="true" class="fab fa-expeditedssl"></i> </div>
+<span data-text="AMBIENTE SEGURO"> AMBIENTE SEGURO </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-7eb59659 sl elementor-widget elementor-widget-premium-icon-list" data-id="7eb59659" data-element_type="widget" data-widget_type="premium-icon-list.default">
+<div class="elementor-widget-container">
+<ul class="premium-bullet-list-box">
+<li class="premium-bullet-list-content elementor-repeater-item-ee41fa5 premium-bullet-list-content-grow-lc">
+<div class="premium-bullet-list-text">
+<div class="premium-bullet-list-wrapper">
+<i aria-hidden="true" class="fas fa-shield-alt"></i> </div>
+<span data-text="CERTIFICADO SSL"> CERTIFICADO SSL </span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-4576ca34 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4576ca34" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3ea4b788" data-id="3ea4b788" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-649648ab elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="649648ab" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3b2340b1" data-id="3b2340b1" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-332ee937 elementor-widget elementor-widget-text-editor" data-id="332ee937" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.6 - 08-06-2022 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style> <p>https://dreamcolageno.com.br/ &#8211; Desenvolvido por New Skin</p> </div>
+</div>
+</div>
+</div>
+<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6cfea708" data-id="6cfea708" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-6b9e8216 elementor-widget elementor-widget-text-editor" data-id="6b9e8216" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p><strong>Todos direitos reservados ® Dream Colágeno • 2022</strong></p> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>document.body.classList.remove("no-js");</script> <script type="rocketlazyloadscript">
+	if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
+		document.body.classList.add( 'is-IE' );
+	}
+	</script>
+<div data-elementor-type="popup" data-elementor-id="63" class="elementor elementor-63 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;zoomIn&quot;,&quot;exit_animation&quot;:&quot;zoomIn&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0.59999999999999997779553950749686919152736663818359375,&quot;sizes&quot;:[]},&quot;timing&quot;:[]}">
+<div class="elementor-section-wrap">
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-45c9234c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="45c9234c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-576ddff5" data-id="576ddff5" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-70128b2 elementor-widget elementor-widget-heading" data-id="70128b2" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">POLÍTICA DE PRIVACIDADE</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-2c92319 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2c92319" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5b313342" data-id="5b313342" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-39f1b479 elementor-widget elementor-widget-text-editor" data-id="39f1b479" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+Temos o compromisso com a privacidade e a segurança de nossos clientes durante todo o processo de navegação e compra pelo site.<br>
+Em nenhuma hipótese os dados cadastrais dos clientes serão vendidos, trocados ou divulgados para terceiros, exceto quando essas informações são necessárias para o processo de entrega, para cobrança, ou para participação em promoções solicitadas pelos clientes.<br>
+Seus dados pessoais são peça fundamental para que seu pedido chegue com segurança na sua casa, de acordo com nosso prazo de entrega.<br>
+Para que estes dados permaneçam intactos, nós desaconselhamos expressamente a divulgação de sua senha a terceiros, mesmo a amigos e parentes.<br>
+<br><br>
+Todas as informações financeiras informadas durante o ato da compra, incluindo número de cartão de crédito, não são armazenadas em nossos servidores.<br>
+Em nenhum momento temos acesso ao número do cartão de crédito dos clientes.<br>
+As verificações financeiras necessárias para a aprovação da compra são realizadas pela plataforma de pagamento.<br>
+<br><br>
+A Dream Colágeno se reserva no direito de entrar em contato com o cliente por e-mail, telefone ou WhatsApp para confirmar dados básicos de cadastro como nome, endereço, complemento, bairro, CEP, município, estado, telefone fixo e telefone celular.<br>
+Em nenhum momento entraremos em contato para solicitar dados sensíveis como, por exemplo, dados do cartão de crédito.<br>
+<br><br>
+Durante a navegação em nosso site seu navegador poderá receber cookies identificando seu interesse em determinado produto.<br>
+Os cookies não coletam informações pessoais como seu nome, endereço de e-mail, endereço postal ou número de telefone.<br>
+Nossos parceiros de exibição de publicidade Google, Facebook e Microsoft (Bing), em seguida, poderão usar os cookies para lhe apresentar publicidade em outros sites.<br>
+As informações coletadas também poderão ser usadas para os seguintes propósitos:<br>
+Estatísticas Otimização e distribuição de tráfego Google Analytics: dados de uso durante a navegação. <br> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div data-elementor-type="popup" data-elementor-id="66" class="elementor elementor-66 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;zoomIn&quot;,&quot;exit_animation&quot;:&quot;zoomIn&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0.59999999999999997779553950749686919152736663818359375,&quot;sizes&quot;:[]},&quot;timing&quot;:[]}">
+<div class="elementor-section-wrap">
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-4191d56 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4191d56" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-216c7073" data-id="216c7073" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-6b11c0da elementor-widget elementor-widget-heading" data-id="6b11c0da" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">termos de uso</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-108311f7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="108311f7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-612478db" data-id="612478db" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-236ff6a9 elementor-widget elementor-widget-text-editor" data-id="236ff6a9" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+A sua privacidade é importante para nós. É política do Dream Colágeno respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site Dream Colágeno, e outros sites que possuímos e operamos.
+<br><br>
+Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.
+<br><br>
+Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.
+<br><br>
+Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.
+<br><br>
+O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.
+<br><br>
+Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.
+<br><br>
+O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.
+<br><br>
+<b>Compromisso do Usuário</b>
+<br><br>
+O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o Dream Colágeno oferece no site e com caráter enunciativo, mas não limitativo:
+<br><br>
+A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;<br>
+B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, ou salmao, casas de apostas online (ex.: Bet.pt), jogos de sorte e azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;<br>
+C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Dream Colágeno, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.<br>
+<br><br>
+<b>Mais informações</b>
+<br><br>
+Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.
+<br><br>
+Esta política é efetiva a partir de March/2021. </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<link rel='stylesheet' id='elementor-post-63-css' href='https://dreamcolageno.com.br/wp-content/uploads/elementor/css/post-63.css?ver=1656730709' media='all' />
+<link rel='stylesheet' id='elementor-post-66-css' href='https://dreamcolageno.com.br/wp-content/uploads/elementor/css/post-66.css?ver=1656730709' media='all' />
+<link rel='stylesheet' id='e-animations-css' href='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.6.6' media='all' />
+<link rel='stylesheet' id='google-fonts-2-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.0.2' media='all' />
+<script id='pa-frontend-js-extra'>
+var PremiumSettings = {"ajaxurl":"https:\/\/dreamcolageno.com.br\/wp-admin\/admin-ajax.php","nonce":"b03f7bc1d5"};
+</script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/uploads/premium-addons-elementor/pa-frontend-55af8dd23.min.js?ver=1662097708' id='pa-frontend-js' defer></script>
+<script id='eae-main-js-extra'>
+var eae = {"ajaxurl":"https:\/\/dreamcolageno.com.br\/wp-admin\/admin-ajax.php","current_url":"aHR0cHM6Ly9kcmVhbWNvbGFnZW5vLmNvbS5ici8=","breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600}};
+var eae_editor = {"plugin_url":"https:\/\/dreamcolageno.com.br\/wp-content\/plugins\/addon-elements-for-elementor-page-builder\/"};
+</script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/js/eae.min.js?ver=1.11.15' id='eae-main-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=1.0' id='font-awesome-4-shim-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/js/animated-main.min.js?ver=1.0' id='animated-main-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/js/particles.min.js?ver=2.0.0' id='eae-particles-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/lib/magnific.min.js?ver=1.1.0' id='wts-magnific-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/lib/vegas/vegas.min.js?ver=2.4.0' id='vegas-js' defer></script>
+<script id='cb70d11b8-js-extra'>
+var localize = {"ajaxurl":"https:\/\/dreamcolageno.com.br\/wp-admin\/admin-ajax.php","nonce":"f2bea6b6a4","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":"https:\/\/dreamcolageno.com.br\/","cart_redirectition":"","cart_page_url":""};
+</script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/uploads/essential-addons-elementor/cb70d11b8.min.js?ver=1662097708' id='cb70d11b8-js' defer></script>
+<script type="rocketlazyloadscript" id='twenty-twenty-one-ie11-polyfills-js-after'>
+( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script data-minify="1" src="https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/themes/twentytwentyone/assets/js/polyfills.js?ver=1656731395" defer></scr' + 'ipt>' );
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://dreamcolageno.com.br/wp-content/cache/min/1/wp-content/themes/twentytwentyone/assets/js/responsive-embeds.js?ver=1656731395' id='twenty-twenty-one-responsive-embeds-script-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/lottie.min.js?ver=4.9.20' id='lottie-js-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.6.6' id='elementor-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.6.6' id='elementor-frontend-modules-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.0.8' id='elementor-sticky-js' defer></script>
+<script type="rocketlazyloadscript" id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/dreamcolageno.com.br\/wp-admin\/admin-ajax.php","nonce":"c9a29a2290","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"pt_PT","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/dreamcolageno.com.br\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.0.8' id='elementor-pro-frontend-js' defer></script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js' defer></script>
+<script type="rocketlazyloadscript" id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Partilhar no Facebook","shareOnTwitter":"Partilhar no Twitter","pinIt":"Fix\u00e1-lo","download":"Download","downloadImage":"Descarregar Imagem","fullscreen":"\u00c9cr\u00e3 Inteiro","zoom":"Zoom","share":"Partilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Seguinte","close":"Fechar"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.6.6","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"e_import_export":true,"additional_custom_breakpoints":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"https:\/\/dreamcolageno.com.br\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":4557,"title":"Dream%20Col%C3%A1geno%20%E2%80%93%20Quando%20somos%20jovens%2C%20a%20nossa%20pele%20%C3%A9%20lisa%20e%20el%C3%A1stica%2C%20pois%20cont%C3%A9m%20muito%20%C3%A1cido%20hialur%C3%B4nico%2C%20uma%20subst%C3%A2ncia%20do%20nosso%20organismo%20que%20preenche%20os%20espa%C3%A7os%20entre%20as%20%E2%80%A6","excerpt":"","featuredImage":false}};
+</script>
+<script type="rocketlazyloadscript" src='https://dreamcolageno.com.br/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.6' id='elementor-frontend-js' defer></script>
+<script type="rocketlazyloadscript">
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+	</script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
